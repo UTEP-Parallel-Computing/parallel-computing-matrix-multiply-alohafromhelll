@@ -1,12 +1,13 @@
 import timeit
 
+#x matrix
 x = [
     [12, 7, 3, 5, 6, 7, 8, 3, 2, 1, 4, 5, 6, 7, 8, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1],
     [12, 7, 3, 5, 6, 7, 8, 3, 2, 1, 4, 5, 6, 7, 8, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1],
     [12, 7, 3, 5, 6, 7, 8, 3, 2, 1, 4, 5, 6, 7, 8, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1],
     [12, 7, 3, 5, 6, 7, 8, 3, 2, 1, 4, 5, 6, 7, 8, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1]
     ]
-
+#y matrix
 y = [
     [5, 8, 1, 2],
     [12, 7, 3, 9],
@@ -35,25 +36,27 @@ y = [
     [5, 8, 1, 2],
     [12, 7, 3, 9]
     ]
-
+#result matrix
 result = [
         [0, 0, 0, 0],
         [0, 0, 0, 0],
         [0, 0, 0, 0],
         [0, 0, 0, 0]]
 
+#start timer
 start = timeit.default_timer()
 
+#matrix multiplication
 for i in range(len(x)):
     for j in range(len(y[0])):
         for k in range(len(y)):
             result[i][j] += x[i][k] * y[k][j]
-
+#stop timer
 stop = timeit.default_timer()
-
+#print time
 print('Time: ', stop - start)
 
 
-
+#print matrix result
 for r in result:
     print(r)
